@@ -18,7 +18,9 @@ module.exports = {
   networks: {
     hardhat: {chainId: 31337},
     truffleD:  {
-      url: "http://localhost:24012/rpc"
+      url: "http://localhost:24012/RPC",
+      gas: 2100000,
+      gasPrice: 8000000000
     }
   },
   etherscan: {

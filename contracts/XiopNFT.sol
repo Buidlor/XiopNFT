@@ -19,7 +19,8 @@ contract XiopNFT is ERC721, Ownable {
         totalSupply = 0;
         maxSupply = 1000;
         maxPerWallet = 3;
-        //set withdrawal wallet address (payable)
+        //withdrawWallet = payable(0x710B1b594d1b6677A811EE320C92B33babfbD308); or msg.sender
+                
     }
     function setIsPublicMintEnabled(bool isPublicMintEnabled_) external onlyOwner {
         isPublicMintEnabled = isPublicMintEnabled_;

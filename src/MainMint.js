@@ -12,14 +12,16 @@ const MainMint = ({accounts, setAccounts}) => {
     async function handleMint() {
         if (window.ethereum){
             const provider = new ethers.providers.Web3Provider(window.ethereum);
-            const signer = provider.gertSigner();
+            const signer = provider.getSigner();
             const contract =new ethers.Contract(
                 xiopPunksNFTAddress,
                 XiopPunksNFT.abi,
                 signer
             );
             try {
-                const response = await contract.mint(BigNumber.from(mintAmount));
+                const response = await contract.mint(BigNumber.from(mintAmount), {
+                    value: ethers.utils.parseEther((0.02 * mintAmount).toString()),
+                });
                 console.log('response: ', response);
             }catch(err){
                 console.log("error: ", err)
@@ -40,7 +42,13 @@ const MainMint = ({accounts, setAccounts}) => {
         <Flex justify="center" align="center" height="60vh" paddingBottom ="100px">
            <Box width="500px"> 
             <div>
-                <Text fontSize={"48px"} textShadow = "0 5px #000000">XiopPunks</Text>
+                <Text 
+                    fontSize="48px"
+                    textShadow = "0 5px #000000"
+                >
+                    XiopPunks
+                </Text>
+
                 <Text
                     fontSize="16px"
                     letterSpacing="-5.5%"
@@ -56,9 +64,9 @@ const MainMint = ({accounts, setAccounts}) => {
                     <div> 
                         <Flex align="center" justify="center">
                             <Button
-                                backgrondColor="#D6517D"
+                                backgroundColor = "#d6518d"
                                 borderRadius="5px"
-                                boxShadow="0px 2px 2px 1px #0F0F0F"
+                                boxShadow="0px 2px 2px 1px #0f0f0f"
                                 color="white"
                                 cursor="pointer"
                                 fontFamily="inherit"
@@ -80,9 +88,9 @@ const MainMint = ({accounts, setAccounts}) => {
                                 value={mintAmount} 
                             />
                             <Button 
-                                backgrondColor="#D6517D"
+                                backgroundColor="#d6518d"
                                 borderRadius="5px"
-                                boxShadow="0px 2px 2px 1px #0F0F0F"
+                                boxShadow="0px 2px 2px 1px #0f0f0f"
                                 color="white"
                                 cursor="pointer"
                                 fontFamily="inherit"
@@ -94,9 +102,9 @@ const MainMint = ({accounts, setAccounts}) => {
                             </Button>
                         </Flex>
                         <Button     
-                            backgrondColor="#D6517D"
+                            backgroundColor="#D6518D"
                             borderRadius="5px"
-                            boxShadow="0px 2px 2px 1px #0F0F0F"
+                            boxShadow="0px 2px 2px 1px #0f0f0f"
                             color="white"
                             cursor="pointer"
                             fontFamily="inherit"
@@ -114,7 +122,7 @@ const MainMint = ({accounts, setAccounts}) => {
                         letterSpacing="-5.5%"
                         fontFamily="inherit"
                         textShadow="0 3px #000000"
-                        color="#D6517D"
+                        color="#d6517d"
                     >
                         Please connect WALLET to mint.
                     </Text>

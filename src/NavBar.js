@@ -49,15 +49,15 @@ const NavBar = ({accounts, setAccounts}) => {
                     <Box margin="0 15px">Connected</Box>
                 ) : (
                     <Button 
-                        backgroundColor={"#d6517d"}
-                        borderRadius={"5px"}
+                        backgroundColor="#d6517d"
+                        borderRadius="5px"
                         boxShadow="0px 2px 1px #0f0f0f"
-                        color={"white"}
+                        color="white"
                         cursor="pointer"
-                        fontFamily={"inherrit"}
+                        fontFamily="inherit"
                         padding ="9px"
-                        margin={"0 15px"}
-                        fontSize = "20px"
+                        margin="0 15px"
+                        fontSize = "17px"
                         onClick={connectAccount}
                     >
                         Connect
