@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/XiopMint/static/css/main.aa9de7d5.css",
+    "main.js": "/XiopMint/static/js/main.67d45e65.js",
+    "static/media/parallax-bg.gif": "/XiopMint/static/media/parallax-bg.a753668321d10848110d.gif",
+    "index.html": "/XiopMint/index.html",
+    "main.aa9de7d5.css.map": "/XiopMint/static/css/main.aa9de7d5.css.map",
+    "main.67d45e65.js.map": "/XiopMint/static/js/main.67d45e65.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aa9de7d5.css",
+    "static/js/main.67d45e65.js"
+  ]
+}
